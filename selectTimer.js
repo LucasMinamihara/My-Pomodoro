@@ -1,6 +1,7 @@
 // minutes and seconds to change on the clock
 let minutes = document.querySelector(".minutes");
-let seconds = document.querySelector("seconds");
+let seconds = document.querySelector(".seconds");
+let secondOnTimeDrown = 1;
 
 // Timer to clockdown
 let nextStepConditional;
@@ -42,24 +43,25 @@ function takingMinutesAndBreak(element) {
   }
   nextStep();
 }
-
 function createObjectOfTimer(breakSelected, minutesSelected) {
   // Condition to create a new Constructor Object
   if (breakSelected && minutesSelected) {
+    console.log("i am here");
     // If the two conditional is true, then we can create a new Constructor Object
     //  Changing Minutes and Break according to the setted ID
-    // Filter the difference beetween minute and break
+
     let breakSelectedConverToNumber = parseInt(breakSelected, 10);
     let MinuteSelectedConverToNumber = parseInt(minutesSelected, 10);
+
     // Create a new constructor Object
     let newObjectWithBreakAndMinute = new clock(
-      breakSelectedConverToNumber,
-      MinuteSelectedConverToNumber
+      MinuteSelectedConverToNumber,
+      breakSelectedConverToNumber
     );
-    console.log(newObjectWithBreakAndMinute);
+    // New function on another page
+    setInf(newObjectWithBreakAndMinute);
   }
 }
-
 // setInterval(() => {
 //   console.log(minutesSelected);
 //   console.log(breakSelected);
