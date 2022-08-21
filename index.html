@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyPomodoroWithoutRounds</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="timerClock">
-        <span class="minutes">59</span>
-        <span class="point">:</span>
-        <span class="seconds">59</span>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyPomodoroWithoutRounds</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="timerClock">
+      <span class="minutes">59</span>
+      <span class="point">:</span>
+      <span class="seconds">59</span>
     </div>
-    <script src="selectTimer.js"></script>
-    <script src="index.js"></script>
-  </body>
+    <div class="timersPomodoro">
+      <button id="25_minute">25</button>
+      <button id="40_minute">45</button>
+      <button id="60_minute">60</button>
+      <button id="90_minute">90</button>
+      <button id="120_minute">120</button>
+    </div>
+    <div class="timersBreak">
+      <button id="3_break">3</button>
+      <button id="5_break">5</button>
+      <button id="10_break">10</button>
+      <button id="15_break">15</button>
+      <button id="20_break">20</button>
+    </div>
+    <div class="start">Start</div>
+  </div>
+  <script src="selectTimer.js"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>
