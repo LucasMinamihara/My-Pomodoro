@@ -31,6 +31,7 @@ function breakTimer(pomodoroTime, newObjectWithBreakAndMinute) {
     minutes.textContent = newObjectWithBreakAndMinute.pause;
     seconds.textContent = secondOnTimeDrown--;
     if (newObjectWithBreakAndMinute.pause == 00 && secondOnTimeDrown == 00) {
+      // Maybe Create a copy of the main Object constructor will resolve my problem here
       clearInterval(pomodoroBreak);
       console.log(newObjectWithBreakAndMinute);
       startPomodoro();
