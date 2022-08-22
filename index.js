@@ -32,7 +32,7 @@ function restartPomodoro(
     }
 
     if (secondOnTimeDrown == 00) {
-      secondOnTimeDrown = 2;
+      secondOnTimeDrown = 59;
       newObjectWithBreakAndMinute.minute--;
     }
   }, 1000);
@@ -61,7 +61,7 @@ function breakTimer(
       );
     }
     if (secondOnTimeDrown == 00) {
-      secondOnTimeDrown = 2;
+      secondOnTimeDrown = 59;
       minutes.textContent = newObjectWithBreakAndMinute.pause--;
     }
   }, 1000);

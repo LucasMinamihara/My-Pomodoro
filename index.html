@@ -12,23 +12,28 @@
 <body>
   <div class="container">
     <div class="timerClock">
-      <span class="minutes">min</span>
-      <span class="point">:</span>
-      <span class="seconds">sec</span>
+      <span class="minutes"></span>
+      <span class="point"></span>
+      <span class="seconds"></span>
     </div>
-    <div class="timersPomodoro">
-      <button id="1_minute">1</button>
-      <button id="40_minute">45</button>
-      <button id="60_minute">60</button>
-      <button id="90_minute">90</button>
-      <button id="120_minute">120</button>
+
+    <div class="selectMinute hidden">
+      <div class="timersPomodoro">
+        <button id="25_minute">25</button>
+        <button id="40_minute">45</button>
+        <button id="60_minute">60</button>
+        <button id="90_minute">90</button>
+        <button id="120_minute">120</button>
+      </div>
     </div>
-    <div class="timersBreak">
-      <button id="3_break">3</button>
-      <button id="5_break">5</button>
-      <button id="10_break">10</button>
-      <button id="15_break">15</button>
-      <button id="20_break">20</button>
+    <div class="selectBreak hidden">
+      <div class="timersBreak">
+        <button id="3_break">3</button>
+        <button id="5_break">5</button>
+        <button id="10_break">10</button>
+        <button id="15_break">15</button>
+        <button id="20_break">20</button>
+      </div>
     </div>
     <div class="start">Start</div>
   </div>

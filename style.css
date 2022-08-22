@@ -1,27 +1,40 @@
 /* Importing Google Fonts Api */
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
+/* Initial Statement of minute and break selector */
+.hidden {
+  display: none;
+}
+
 /* Reseting Default Padding and Margin */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Inter";
 }
 /* Defining a Height and Background of Container */
 .container {
   height: 100vh;
-  background-color: rgb(127, 246, 255);
+  background-color: #a78bfa;
 }
 
 .timerClock {
-  height: 30%;
-  width: 20%;
+  height: 50%;
+  width: 40%;
   border-radius: 50%;
-  background: black;
+  background: #7c3aed;
+  box-shadow: 5px 5px 5px 5px #8b5cf6;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: center;
+}
+.minutes {
+  justify-self: end;
+}
+.seconds {
+  justify-self: start;
 }
 span {
   margin-right: -60px;
@@ -34,8 +47,9 @@ span {
   cursor: pointer;
   padding: 10px;
   margin-top: 20px;
-  background: cyan;
+  background: #7c3aed;
   color: white;
   display: inline-block;
   box-shadow: 1px 1px 1px 1px black;
+  padding: 10px 100px;
 }

@@ -1,7 +1,7 @@
 // minutes and seconds to change on the clock
 let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
-let secondOnTimeDrown = 1;
+let secondOnTimeDrown = 59;
 
 // Timer to clockdown
 let nextStepConditional;
