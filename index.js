@@ -3,38 +3,62 @@ function setInf(newObjectWithBreakAndMinute) {
 }
 
 function startPomodoro(newObjectWithBreakAndMinute) {
-  console.log(newObjectWithBreakAndMinute.minute);
+  let newObjectWithBreakAndMinuteCopy = {
+    ...newObjectWithBreakAndMinute,
+  };
   document.querySelector(".start").addEventListener("click", function () {
-    const pomodoroTime = setInterval(() => {
-      minutes.textContent = newObjectWithBreakAndMinute.minute;
-      seconds.textContent = secondOnTimeDrown--;
-
-      if (newObjectWithBreakAndMinute.minute == 00 && secondOnTimeDrown == 00) {
-        breakTimer(pomodoroTime, newObjectWithBreakAndMinute);
-      }
-
-      if (secondOnTimeDrown == 00) {
-        secondOnTimeDrown = 2;
-        newObjectWithBreakAndMinute.minute--;
-      }
-    }, 1000);
+    restartPomodoro(
+      newObjectWithBreakAndMinute,
+      newObjectWithBreakAndMinuteCopy
+    );
   });
 }
 
-function breakTimer(pomodoroTime, newObjectWithBreakAndMinute) {
+function restartPomodoro(
+  newObjectWithBreakAndMinute,
+  newObjectWithBreakAndMinuteCopy
+) {
+  newObjectWithBreakAndMinute = { ...newObjectWithBreakAndMinuteCopy };
+  const pomodoroTime = setInterval(() => {
+    minutes.textContent = newObjectWithBreakAndMinute.minute;
+    seconds.textContent = secondOnTimeDrown--;
+
+    if (newObjectWithBreakAndMinute.minute == 00 && secondOnTimeDrown == 00) {
+      breakTimer(
+        pomodoroTime,
+        newObjectWithBreakAndMinute,
+        newObjectWithBreakAndMinuteCopy
+      );
+    }
+
+    if (secondOnTimeDrown == 00) {
+      secondOnTimeDrown = 2;
+      newObjectWithBreakAndMinute.minute--;
+    }
+  }, 1000);
+}
+
+function breakTimer(
+  pomodoroTime,
+  newObjectWithBreakAndMinute,
+  newObjectWithBreakAndMinuteCopy
+) {
   // Clear last interval
   clearInterval(pomodoroTime);
   //   Pause Timer
-  console.log(newObjectWithBreakAndMinute.pause);
   const pomodoroBreak = setInterval(() => {
     console.log(newObjectWithBreakAndMinute.pause);
     minutes.textContent = newObjectWithBreakAndMinute.pause;
     seconds.textContent = secondOnTimeDrown--;
     if (newObjectWithBreakAndMinute.pause == 00 && secondOnTimeDrown == 00) {
-      // Maybe Create a copy of the main Object constructor will resolve my problem here
+      // Putting the values again on the constructor main object
       clearInterval(pomodoroBreak);
+      console.log("lets try to restart the pomodoro");
       console.log(newObjectWithBreakAndMinute);
-      startPomodoro();
+      restartPomodoro(
+        newObjectWithBreakAndMinute,
+        newObjectWithBreakAndMinuteCopy
+      );
     }
     if (secondOnTimeDrown == 00) {
       secondOnTimeDrown = 2;
