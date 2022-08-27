@@ -12,18 +12,18 @@
 <body>
 
   <div class="container">
-    <div class="center-timer">
+    <div class="center-timer" id="initialScreen">
       <p class="allText" id="welcome">Welcome to my Pomodoro Aplicattion</p>
       <p class="allTextWelcomeButton" id="welcomeButton">Get Started!</p>
     </div>
     <!-- In the start the clock div will be invisible, with that the user can select a minute and a break timer -->
-    <div class="timerClock invisible">
+    <div class="timerClock invisible" id="oficialClock">
       <span class="minutes"></span>
-      <span class="point"></span>
+      <span class="point">:</span>
       <span class="seconds"></span>
     </div>
     <!-- To Hidden this part just put hidden on div below -->
-    <div class="selectMinute center-timer hidden">
+    <div class="selectMinute center-timer hidden" id="secondScreen">
       <p class="allText">how many minutes do you want to focus?</p>
       <div class="timersPomodoro">
         <button id="25_minute" class="btn-timer">25</button>
@@ -34,7 +34,7 @@
       </div>
     </div>
     <!-- To Hidden this part just put hidden on div below -->
-    <div class="selectBreak center-timer hidden">
+    <div class="selectBreak center-timer hidden" id="thirdScreen">
       <p class="allText">how many minutes do you want to break?</p>
       <div class="timersBreak">
         <button id="3_break" class="btn-timer">3</button>
@@ -45,7 +45,7 @@
       </div>
     </div>
     <!-- To Hidden this part just put the invisible on div below -->
-    <div class="btn invisible">Start</div>
+    <div class="btn invisible start" id="startButton">Start</div>
   </div>
   <script src="selectTimer.js"></script>
   <script src="index.js"></script>

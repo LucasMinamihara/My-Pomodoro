@@ -1,7 +1,20 @@
+// Taking variables values
+// Taking Screen Values
+const initialScreen = document.getElementById("initialScreen");
+const secondScreen = document.getElementById("secondScreen");
+const thirdScreen = document.getElementById("thirdScreen");
+
+// Start Button
+
+const startButton = document.getElementById("startButton");
+
+// Oficial Clock
+const oficialClock = document.getElementById("oficialClock");
+
 // minutes and seconds to change on the clock
 let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
-let secondOnTimeDrown = 59;
+let secondOnTimeDrown = 0;
 
 // Timer to clockdown
 let nextStepConditional;
@@ -62,7 +75,13 @@ function createObjectOfTimer(breakSelected, minutesSelected) {
     setInf(newObjectWithBreakAndMinute);
   }
 }
-// setInterval(() => {
-//   console.log(minutesSelected);
-//   console.log(breakSelected);
-// }, 3000);
+
+// - Need to start seconds with 00 seconds intead 60 sec or 59 sec
+// - Always set two numbers when have only one, for example
+// if go to 9, 8, 7 seconds i wanna display 09, 08, 07 instead
+// - Animate the select minute and select break display
+// - in the early i dont wanna display : in the clock
+// - i wanna animate the clock when countdown is active
+// - block the start button after the start countDown
+// - create another button that reset the pomodoro
+// - create a element that shows how many pomodoro you did

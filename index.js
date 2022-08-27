@@ -66,3 +66,35 @@ function breakTimer(
     }
   }, 1000);
 }
+
+// Initialization the application
+document.querySelector("#welcomeButton").addEventListener("click", function () {
+  initialScreen.classList.add("hidden");
+  secondScreen.classList.remove("hidden");
+});
+
+// Looping over a btn-timer options, minutes and break
+
+const allbtnTimerOption = document.querySelectorAll(".btn-timer");
+const countOptFunction = 0;
+function options(countOptFunction) {
+  allbtnTimerOption.forEach((eachTimer) => {
+    eachTimer.addEventListener("click", function () {
+      if (countOptFunction == 0 && minutesSelected) {
+        secondScreen.classList.add("hidden");
+        thirdScreen.classList.remove("hidden");
+        options(countOptFunction++);
+      }
+      if (countOptFunction == 1 && breakSelected) {
+        thirdScreen.classList.add("hidden");
+        startButton.classList.remove("invisible");
+        oficialClock.classList.remove("invisible");
+        options(countOptFunction++);
+      }
+      if (countOptFunction == 2) {
+        return;
+      }
+    });
+  });
+}
+options(countOptFunction);
