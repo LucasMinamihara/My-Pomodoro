@@ -22,6 +22,7 @@ let nextStepConditional;
 // Minutes selected
 let minutesSelected;
 let breakSelected;
+let point = window.document.querySelector(".point");
 
 const clock = function (minute, pause) {
   this.minute = minute;
@@ -51,7 +52,7 @@ function takingMinutesAndBreak(element) {
   if (nextStep == 2) {
     document.querySelector(".start").addEventListener("click", function () {
       // Starting Pomodoro
-      //   After This process the conditional nextStep will receive 0 again to another person can use it again
+      //   After This process the conditional nextStep will receive 0 again, then another person can use it again
     });
   }
   nextStep();
@@ -76,11 +77,7 @@ function createObjectOfTimer(breakSelected, minutesSelected) {
   }
 }
 
-// - Need to start seconds with 00 seconds intead 60 sec or 59 sec
-// - Always set two numbers when have only one, for example
-// if go to 9, 8, 7 seconds i wanna display 09, 08, 07 instead
 // - Animate the select minute and select break display
-// - in the early i dont wanna display : in the clock
 // - i wanna animate the clock when countdown is active
 // - block the start button after the start countDown
 // - create another button that reset the pomodoro

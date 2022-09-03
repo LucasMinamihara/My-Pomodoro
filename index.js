@@ -7,6 +7,9 @@ function startPomodoro(newObjectWithBreakAndMinute) {
     ...newObjectWithBreakAndMinute,
   };
   document.querySelector(".start").addEventListener("click", function () {
+    setTimeout(() => {
+      point.textContent = ":";
+    }, 1000);
     restartPomodoro(
       newObjectWithBreakAndMinute,
       newObjectWithBreakAndMinuteCopy
@@ -21,7 +24,7 @@ function restartPomodoro(
   newObjectWithBreakAndMinute = { ...newObjectWithBreakAndMinuteCopy };
   const pomodoroTime = setInterval(() => {
     minutes.textContent = newObjectWithBreakAndMinute.minute;
-    seconds.textContent = secondOnTimeDrown--;
+    seconds.textContent = String(secondOnTimeDrown--).padStart(2, 0);
 
     if (newObjectWithBreakAndMinute.minute == 00 && secondOnTimeDrown == 00) {
       breakTimer(
@@ -31,7 +34,8 @@ function restartPomodoro(
       );
     }
 
-    if (secondOnTimeDrown == 00) {
+    if (secondOnTimeDrown == -1) {
+      seconds.textContent = String(00).padStart(2, 0);
       secondOnTimeDrown = 59;
       newObjectWithBreakAndMinute.minute--;
     }
@@ -48,10 +52,13 @@ function breakTimer(
   //   Pause Timer
   const pomodoroBreak = setInterval(() => {
     console.log(newObjectWithBreakAndMinute.pause);
-    minutes.textContent = newObjectWithBreakAndMinute.pause;
-    seconds.textContent = secondOnTimeDrown--;
+    minutes.textContent = String(newObjectWithBreakAndMinute.pause).padStart(
+      2,
+      0
+    );
+    seconds.textContent = String(secondOnTimeDrown--).padStart(2, 0);
     if (newObjectWithBreakAndMinute.pause == 00 && secondOnTimeDrown == 00) {
-      // Putting the values again on the constructor main object
+      // Putting values again on the constructor main object
       clearInterval(pomodoroBreak);
       console.log("lets try to restart the pomodoro");
       console.log(newObjectWithBreakAndMinute);
@@ -60,9 +67,12 @@ function breakTimer(
         newObjectWithBreakAndMinuteCopy
       );
     }
-    if (secondOnTimeDrown == 00) {
+    if (secondOnTimeDrown == -1) {
+      seconds.textContent = String(00).padStart(2, 0);
       secondOnTimeDrown = 59;
-      minutes.textContent = newObjectWithBreakAndMinute.pause--;
+      minutes.textContent = String(
+        newObjectWithBreakAndMinute.pause--
+      ).padStart(2, 0);
     }
   }, 1000);
 }
