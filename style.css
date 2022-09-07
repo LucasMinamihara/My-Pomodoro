@@ -102,6 +102,13 @@
     transform: translateX(0px);
   }
 }
+/* Styling palette of timers */
+.timersBreak {
+  animation: animatedProgress 3s forwards;
+}
+.timersPomodoro {
+  animation: animatedProgress 3s forwards;
+}
 /* Styling Timer Button */
 .btn-timer {
   padding: 15px 40px;
@@ -157,6 +164,13 @@ span {
   margin-left: -60px;
   font-size: 60px;
   color: #ffffff;
+  opacity: 0;
+  transition-timing-function: forwards;
+  transition-duration: 3s;
+}
+/* trying to enable a effect here */
+span::after {
+  opacity: 1;
 }
 /* Styling start button */
 .btn {
@@ -204,4 +218,41 @@ span {
 .btn:hover::after {
   transform: scale(1.5);
   opacity: 0;
+}
+
+.progressBar {
+  width: 700px;
+  height: 200px;
+  position: absolute;
+  top: 84%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  justify-content: space-around;
+  gap: 10px;
+  align-content: center;
+}
+.squareProgressBar {
+  width: 70px;
+  height: 100px;
+  background: #ffffffff;
+  color: #8b5cf6;
+  display: inline-block;
+  border: 3px solid #ffffffff;
+  animation: animatedProgress 3s forwards;
+  text-align: center;
+  line-height: 95px;
+  font-size: 32px;
+  border-radius: 100px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes animatedProgress {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

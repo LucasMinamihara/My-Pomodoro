@@ -81,4 +81,4 @@ function createObjectOfTimer(breakSelected, minutesSelected) {
 // - i wanna animate the clock when countdown is active
 // - block the start button after the start countDown
 // - create another button that reset the pomodoro
-// - create a element that shows how many pomodoro you did
+

@@ -23,10 +23,17 @@ function restartPomodoro(
 ) {
   newObjectWithBreakAndMinute = { ...newObjectWithBreakAndMinuteCopy };
   const pomodoroTime = setInterval(() => {
-    minutes.textContent = newObjectWithBreakAndMinute.minute;
+    minutes.textContent = String(newObjectWithBreakAndMinute.minute).padStart(
+      2,
+      0
+    );
     seconds.textContent = String(secondOnTimeDrown--).padStart(2, 0);
 
     if (newObjectWithBreakAndMinute.minute == 00 && secondOnTimeDrown == 00) {
+      setTimeout(() => {
+        newProgress(newObjectWithBreakAndMinuteCopy);
+      }, 1000);
+      changeColor();
       breakTimer(
         pomodoroTime,
         newObjectWithBreakAndMinute,
@@ -51,7 +58,6 @@ function breakTimer(
   clearInterval(pomodoroTime);
   //   Pause Timer
   const pomodoroBreak = setInterval(() => {
-    console.log(newObjectWithBreakAndMinute.pause);
     minutes.textContent = String(newObjectWithBreakAndMinute.pause).padStart(
       2,
       0
@@ -62,6 +68,7 @@ function breakTimer(
       clearInterval(pomodoroBreak);
       console.log("lets try to restart the pomodoro");
       console.log(newObjectWithBreakAndMinute);
+      returnColor();
       restartPomodoro(
         newObjectWithBreakAndMinute,
         newObjectWithBreakAndMinuteCopy
