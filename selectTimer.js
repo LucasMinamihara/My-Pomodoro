@@ -7,6 +7,7 @@ const thirdScreen = document.getElementById("thirdScreen");
 // Start Button
 
 const startButton = document.getElementById("startButton");
+const finishButton = document.getElementById("FinishButton");
 
 // Oficial Clock
 const oficialClock = document.getElementById("oficialClock");
@@ -16,9 +17,9 @@ let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
 let secondOnTimeDrown = 0;
 
-// Timer to clockdown
-let nextStepConditional;
-
+// taking all minute of activity
+let numPomodoro = 0;
+let allMinutes = 0;
 // Minutes selected
 let minutesSelected;
 let breakSelected;
@@ -33,10 +34,6 @@ document.querySelectorAll("button").forEach((minutesAndBreak) => {
   minutesAndBreak.addEventListener("click", takingMinutesAndBreak);
 });
 
-function nextStep() {
-  // Goes to the next Step when set the two values of the pomodoro, minute and break
-  return nextStepConditional++;
-}
 function takingMinutesAndBreak(element) {
   let minuteOrBreak = element.target.id;
   if (minuteOrBreak.includes("minute")) {
@@ -49,18 +46,10 @@ function takingMinutesAndBreak(element) {
     breakSelected = minuteOrBreak;
     createObjectOfTimer(breakSelected, minutesSelected);
   }
-  if (nextStep == 2) {
-    document.querySelector(".start").addEventListener("click", function () {
-      // Starting Pomodoro
-      //   After This process the conditional nextStep will receive 0 again, then another person can use it again
-    });
-  }
-  nextStep();
 }
 function createObjectOfTimer(breakSelected, minutesSelected) {
   // Condition to create a new Constructor Object
   if (breakSelected && minutesSelected) {
-    console.log("i am here");
     // If the two conditional is true, then we can create a new Constructor Object
     //  Changing Minutes and Break according to the setted ID
 
@@ -77,8 +66,16 @@ function createObjectOfTimer(breakSelected, minutesSelected) {
   }
 }
 
-// - Animate the select minute and select break display
-// - i wanna animate the clock when countdown is active
-// - block the start button after the start countDown
-// - create another button that reset the pomodoro
+// - create another button that stop the pomodoro
 
+function finishTask(pomodoroBreak, pomodoroTime) {
+  finishButton.addEventListener("click", function () {
+    clearInterval(pomodoroBreak);
+    clearInterval(pomodoroTime);
+    finished();
+  });
+}
+
+function finished() {
+  console.log(`You did ${allMinutes} today! congratulations ❤❤❤❤❤`);
+}

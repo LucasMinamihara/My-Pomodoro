@@ -8,7 +8,9 @@ function startPomodoro(newObjectWithBreakAndMinute) {
   };
   document.querySelector(".start").addEventListener("click", function () {
     setTimeout(() => {
+      startButton.style.display = "none";
       point.textContent = ":";
+      finishButton.classList.remove("invisible");
     }, 1000);
     restartPomodoro(
       newObjectWithBreakAndMinute,
@@ -19,7 +21,8 @@ function startPomodoro(newObjectWithBreakAndMinute) {
 
 function restartPomodoro(
   newObjectWithBreakAndMinute,
-  newObjectWithBreakAndMinuteCopy
+  newObjectWithBreakAndMinuteCopy,
+  pomodoroBreak
 ) {
   newObjectWithBreakAndMinute = { ...newObjectWithBreakAndMinuteCopy };
   const pomodoroTime = setInterval(() => {
@@ -47,6 +50,7 @@ function restartPomodoro(
       newObjectWithBreakAndMinute.minute--;
     }
   }, 1000);
+  finishTask(pomodoroBreak, pomodoroTime);
 }
 
 function breakTimer(
@@ -66,8 +70,6 @@ function breakTimer(
     if (newObjectWithBreakAndMinute.pause == 00 && secondOnTimeDrown == 00) {
       // Putting values again on the constructor main object
       clearInterval(pomodoroBreak);
-      console.log("lets try to restart the pomodoro");
-      console.log(newObjectWithBreakAndMinute);
       returnColor();
       restartPomodoro(
         newObjectWithBreakAndMinute,
@@ -82,6 +84,7 @@ function breakTimer(
       ).padStart(2, 0);
     }
   }, 1000);
+  finishTask(pomodoroBreak, pomodoroTime);
 }
 
 // Initialization the application

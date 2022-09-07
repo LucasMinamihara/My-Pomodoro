@@ -10,8 +10,8 @@
 </head>
 
 <body>
-
-  <div class="container">
+  <!-- remove hiden after -->
+  <div class="container hidden">
     <div class="center-timer" id="initialScreen">
       <p class="allText" id="welcome">Welcome to my Pomodoro Aplicattion</p>
       <p class="allTextWelcomeButton" id="welcomeButton">Get Started!</p>
@@ -20,7 +20,7 @@
     <div class="selectMinute center-timer hidden" id="secondScreen">
       <p class="allText">how many minutes do you want to focus?</p>
       <div class="timersPomodoro">
-        <button id="25_minute" class="btn-timer">25</button>
+        <button id="1_minute" class="btn-timer">25</button>
         <button id="45_minute" class="btn-timer">45</button>
         <button id="60_minute" class="btn-timer">60</button>
         <button id="90_minute" class="btn-timer">90</button>
@@ -31,7 +31,7 @@
     <div class="selectBreak center-timer hidden" id="thirdScreen">
       <p class="allText">how many minutes do you want to break?</p>
       <div class="timersBreak">
-        <button id="3_break" class="btn-timer">3</button>
+        <button id="1_break" class="btn-timer">3</button>
         <button id="5_break" class="btn-timer">5</button>
         <button id="10_break" class="btn-timer">10</button>
         <button id="15_break" class="btn-timer">15</button>
@@ -45,20 +45,13 @@
       <span class="seconds"></span>
     </div>
     <!-- To Hidden this part just put the invisible on div below -->
-    <div class="btn invisible start" id="startButton">Start</div>
+    <div class="btn invisible start" id="startButton">START</div>
+    <div class="btn invisible finish" id="FinishButton">STOP</div>
   </div>
   <div class="progressBar">
-    <!-- <div class="squareProgressBar"></div>
-    <div class="squareProgressBar"></div>
-    <div class="squareProgressBar"></div>
-    <div class="squareProgressBar"></div>
-    <div class="squareProgressBar"></div>
-    <div class="squareProgressBar"></div>
-    <div class="squareProgressBar"></div>
-    <div class="squareProgressBar"></div>
-    <div class="squareProgressBar"></div>
-    <div class="squareProgressBar"></div> -->
+    <!-- <div class="squareProgressBar"></div>  -->
   </div>
+  <div class="finishScreen">Hey guys, today i gonna show you how to get better on osu</div>
   <script src="selectTimer.js"></script>
   <script src="index.js"></script>
   <script src="progressBar.js"></script>
