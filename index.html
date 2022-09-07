@@ -11,7 +11,7 @@
 
 <body>
   <!-- remove hiden after -->
-  <div class="container hidden">
+  <div class="container">
     <div class="center-timer" id="initialScreen">
       <p class="allText" id="welcome">Welcome to my Pomodoro Aplicattion</p>
       <p class="allTextWelcomeButton" id="welcomeButton">Get Started!</p>
@@ -51,7 +51,10 @@
   <div class="progressBar">
     <!-- <div class="squareProgressBar"></div>  -->
   </div>
-  <div class="finishScreen">Hey guys, today i gonna show you how to get better on osu</div>
+  <div class="finishScreenDiv hidden">
+    <p class="finishScreenP"></p>
+    <div class="btn" id="reload">RELOAD</div>
+  </div>
   <script src="selectTimer.js"></script>
   <script src="index.js"></script>
   <script src="progressBar.js"></script>

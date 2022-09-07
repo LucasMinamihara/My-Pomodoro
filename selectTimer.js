@@ -72,10 +72,32 @@ function finishTask(pomodoroBreak, pomodoroTime) {
   finishButton.addEventListener("click", function () {
     clearInterval(pomodoroBreak);
     clearInterval(pomodoroTime);
-    finished();
+    setTimeout(() => {
+      document.querySelector(".container").classList.add("hidden");
+      finished();
+    }, 1000);
   });
 }
 
 function finished() {
-  console.log(`You did ${allMinutes} today! congratulations ❤❤❤❤❤`);
+  let finishP = document.querySelector(".finishScreenP");
+  document.querySelector(".finishScreenDiv").classList.remove("hidden");
+  finishedScreen(finishP);
 }
+
+function finishedScreen(finishP) {
+  if (allMinutes > 5) {
+    finishP.textContent = `You did ${allMinutes.toFixed(
+      2
+    )} Hours today! congratulations ❤❤❤❤❤`;
+  } else {
+    finishP.textContent = `You did ${allMinutes.toFixed(
+      2
+    )} Hours today 💥💥💥💥`;
+  }
+}
+
+// reload page button
+document.querySelector("#reload").addEventListener("click", function () {
+  location.reload();
+});
