@@ -164,14 +164,9 @@ span {
   margin-left: -60px;
   font-size: 60px;
   color: #ffffff;
-  opacity: 0;
-  transition-timing-function: forwards;
-  transition-duration: 3s;
 }
 /* trying to enable a effect here */
-span::after {
-  opacity: 1;
-}
+
 /* Styling start button */
 .btn {
   cursor: pointer;
