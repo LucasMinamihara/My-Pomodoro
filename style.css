@@ -1,0 +1,281 @@
+/* Importing Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+/* Color #7c3aed */
+/* Color2 #ffffff */
+/* color3 #18181b */
+/* Initial Statement of minute and break selector */
+.hidden {
+  display: none;
+}
+.invisible {
+  visibility: hidden;
+}
+
+/* Reseting Default Padding and Margin */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+#welcome {
+  font-size: 28px;
+}
+
+#welcomeButton {
+  border-radius: 100px;
+  background: #171717;
+  cursor: pointer;
+  padding: 10px 40px;
+  display: inline-block;
+  animation-delay: 0.4s;
+}
+.allTextWelcomeButton {
+  opacity: 0;
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  animation: animatedtextWelcome 3s forwards;
+  -webkit-animation: animatedtextWelcome 3s forwards;
+  animation-delay: 1s;
+}
+/* Putting the Text How long do you want to focus */
+.allText {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 100px;
+  text-align: center;
+  animation: animatedtext 2s;
+  -webkit-animation: animatedtext 2s;
+  text-transform: uppercase;
+}
+@keyframes animatedtextWelcome {
+  0% {
+    transform: translateX(-400px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+/* alternative browser Animation of How Long Time do you want to focus */
+@-webkit-keyframes animatedtextWelcome {
+  0% {
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* Animation of How Long Time do you want to focus */
+@keyframes animatedtext {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+/* alternative browser Animation of How Long Time do you want to focus */
+@-webkit-keyframes animatedtext {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+/* Styling palette of timers */
+.timersBreak {
+  animation: animatedProgress 3s forwards;
+}
+.timersPomodoro {
+  animation: animatedProgress 3s forwards;
+}
+/* Styling Timer Button */
+.btn-timer {
+  padding: 15px 40px;
+  border-radius: 100px;
+  border: transparent;
+  margin: 0 10px;
+  margin-bottom: 100px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s;
+  font-size: 16px;
+  background: #171717;
+  color: #ffffff;
+}
+.btn-timer:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.center-timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Minutes Section Finished */
+
+/* Defining a Height and Background of Container */
+.container {
+  height: 100vh;
+  background-color: #404040;
+}
+
+.timerClock {
+  height: 50%;
+  width: 40%;
+  border-radius: 50%;
+  background: #18181b;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.minutes {
+  justify-self: end;
+}
+
+.seconds {
+  justify-self: start;
+}
+span {
+  margin-right: -60px;
+  margin-left: -60px;
+  font-size: 60px;
+  color: #ffffff;
+}
+/* trying to enable a effect here */
+
+/* Styling start button */
+.btn {
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 20px;
+  background: #18181b;
+  color: #ffffff;
+  display: inline-block;
+  padding: 10px 100px;
+  border-radius: 100px;
+  border: transparent;
+  transition: all 0.2s;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+/* Putting a animation on button element */
+/* Trying Put Effect on start button */
+.btn:hover {
+  top: 61%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+.btn:active {
+  top: 60.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  transform: all 0.4s;
+}
+.btn:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
+}
+
+.progressBar {
+  width: 700px;
+  height: 200px;
+  position: absolute;
+  top: 84%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  justify-content: space-around;
+  gap: 10px;
+  align-content: center;
+}
+.squareProgressBar {
+  width: 70px;
+  height: 100px;
+  background: #ffffffff;
+  color: #171717;
+  display: inline-block;
+  border: 3px solid #ffffffff;
+  animation: animatedProgress 3s forwards;
+  text-align: center;
+  line-height: 95px;
+  font-size: 32px;
+  border-radius: 100px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes animatedProgress {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Last screen, finish Screen */
+/* style the last screen */
+.finishScreenDiv {
+  font-size: 38px;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: #18181b;
+}
+.finishScreenP {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+#reload {
+  font-size: 14px;
+}

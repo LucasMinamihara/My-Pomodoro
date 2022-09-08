@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyPomodoroWithoutRounds</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- remove hiden after -->
+  <div class="container">
+    <div class="center-timer" id="initialScreen">
+      <p class="allText" id="welcome">Welcome to my Pomodoro Aplicattion</p>
+      <p class="allTextWelcomeButton" id="welcomeButton">Get Started!</p>
+    </div>
+    <!-- To Hidden this part just put hidden on div below -->
+    <div class="selectMinute center-timer hidden" id="secondScreen">
+      <p class="allText">how many minutes do you want to focus?</p>
+      <div class="timersPomodoro">
+        <button id="25_minute" class="btn-timer">25</button>
+        <button id="45_minute" class="btn-timer">45</button>
+        <button id="60_minute" class="btn-timer">60</button>
+        <button id="90_minute" class="btn-timer">90</button>
+        <button id="120_minute" class="btn-timer">120</button>
+      </div>
+    </div>
+    <!-- To Hidden this part just put hidden on div below -->
+    <div class="selectBreak center-timer hidden" id="thirdScreen">
+      <p class="allText">how many minutes do you want to break?</p>
+      <div class="timersBreak">
+        <button id="25_break" class="btn-timer">3</button>
+        <button id="5_break" class="btn-timer">5</button>
+        <button id="10_break" class="btn-timer">10</button>
+        <button id="15_break" class="btn-timer">15</button>
+        <button id="20_break" class="btn-timer">20</button>
+      </div>
+    </div>
+    <!-- In the start the clock div will be invisible, with that the user can select a minute and a break timer -->
+    <div class="timerClock invisible" id="oficialClock">
+      <span class="minutes"></span>
+      <span class="point"></span>
+      <span class="seconds"></span>
+    </div>
+    <!-- To Hidden this part just put the invisible on div below -->
+    <div class="btn invisible start" id="startButton">START</div>
+    <div class="btn invisible finish" id="FinishButton">STOP</div>
+  </div>
+  <div class="progressBar">
+    <!-- <div class="squareProgressBar"></div>  -->
+  </div>
+  <div class="finishScreenDiv hidden">
+    <p class="finishScreenP"></p>
+    <div class="btn" id="reload">RELOAD</div>
+  </div>
+  <script src="selectTimer.js"></script>
+  <script src="index.js"></script>
+  <script src="progressBar.js"></script>
+  <script src="changeColor.js"></script>
+</body>
+
+</html>
