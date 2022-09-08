@@ -7,6 +7,7 @@ function startPomodoro(newObjectWithBreakAndMinute) {
     ...newObjectWithBreakAndMinute,
   };
   document.querySelector(".start").addEventListener("click", function () {
+    playPomodoroSound();
     setTimeout(() => {
       startButton.style.display = "none";
       point.textContent = ":";
