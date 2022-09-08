@@ -75,13 +75,18 @@
 
     function playPomodoroSound() {
       soundPomodoro.play();
-      soundBreak.pause();
-  
+      soundBreak.stop();
+
     }
 
     function playBreakSound() {
       soundPomodoro.pause();
       soundBreak.play();
+    }
+
+    function finishAll() {
+      soundPomodoro.stop();
+      soundBreak.stop();
     }
   </script>
 

@@ -73,6 +73,7 @@ function finishTask(pomodoroBreak, pomodoroTime) {
     clearInterval(pomodoroBreak);
     clearInterval(pomodoroTime);
     setTimeout(() => {
+      finishAll();
       document.querySelector(".container").classList.add("hidden");
       finished();
     }, 1000);
