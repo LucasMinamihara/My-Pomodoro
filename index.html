@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyPomodoroWithoutRounds</title>
   <link rel="stylesheet" href="style.css" />
+  <script type="module" src="firebase.js" defer></script>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
     <div class="selectBreak center-timer hidden" id="thirdScreen">
       <p class="allText">how many minutes do you want to break?</p>
       <div class="timersBreak">
-        <button id="3_break" class="btn-timer">3</button>
+        <button id="25_break" class="btn-timer">3</button>
         <button id="5_break" class="btn-timer">5</button>
         <button id="10_break" class="btn-timer">10</button>
         <button id="15_break" class="btn-timer">15</button>
@@ -55,6 +56,7 @@
     <p class="finishScreenP"></p>
     <div class="btn" id="reload">RELOAD</div>
   </div>
+
   <script src="selectTimer.js"></script>
   <script src="index.js"></script>
   <script src="progressBar.js"></script>
@@ -65,12 +67,12 @@
     let soundBreak = new Howl({
       src: ["../Sounds/pinkTry.mp3"],
       volume: 0.3,
-      loop: true,
+      loop: false,
     });
     let soundPomodoro = new Howl({
       src: ["../Sounds/lofi.mp3"],
       volume: 0.5,
-      loop: true,
+      loop: false,
     });
 
     function playPomodoroSound() {
@@ -89,7 +91,6 @@
       soundBreak.stop();
     }
   </script>
-  <script type="module" src="firebase/firebase.js"></script>
 </body>
 
 </html>

@@ -99,6 +99,8 @@ function finishedScreen(finishP) {
 }
 
 // reload page button
-document.querySelector("#reload").addEventListener("click", function () {
+document.querySelector("#reload").addEventListener("click", function() {
   location.reload();
 });
+
+

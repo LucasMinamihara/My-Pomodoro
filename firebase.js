@@ -2,7 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase
 import {
   getFirestore,
   collection,
-  addDoc,
   getDocs,
   updateDoc,
   increment,
@@ -23,44 +22,42 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const POMODORODATABASE = "pomodorodatabase";
 const idPomodoroDataBase = "vnhBaJjVbUud7B1cUNIt";
-// async function addHoursOnDataBase() {
-//   await addDoc(collection(db, POMODORODATABASE), {
-//     hours: 10,
-//     minutes: 33,
-
-//   });
-// }
-// addHoursOnDataBase()
-//   .then(() => {
-//     console.log("item adicionado com sucesso!");
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
 
 async function readDataBase() {
   const database_hourAndMinutes = await getDocs(
     collection(db, POMODORODATABASE)
   );
   database_hourAndMinutes.forEach((doc) => {
-    console.log(doc.data(0));
+    console.log(doc.data());
   });
 }
 
-async function attDataBase() {
+ function attDataBase(minute) {
   const databaseInformation = doc(db, POMODORODATABASE, idPomodoroDataBase);
-  await updateDoc(databaseInformation, {
-    hours: increment(10),
-    minutes: increment(20),
-  });
+  isHour(databaseInformation, minute);
 }
-
-readDataBase()
-  .then(() => {
-    console.log("Item adicionado com sucesso!");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
-attDataBase();
+async function isHour(databaseInformation, minute) {
+  if (minute) {
+    if (minute / 60 == 1) {
+      await updateDoc(databaseInformation, {
+        hours: increment(1),
+      });
+      if (minute / 90 == 1) {
+        await updateDoc(databaseInformation, {
+          hours: increment(1),
+          minutes: increment(30),
+        });
+      }
+      if (minute / 120 == 1) {
+        await updateDoc(databaseInformation, {
+          hours: increment(2),
+        });
+      }
+    } else {
+      await updateDoc(databaseInformation, {
+        minutes: increment(minute),
+      });
+    }
+  }
+  readDataBase();
+}
