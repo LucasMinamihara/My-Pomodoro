@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyPomodoroWithoutRounds</title>
   <link rel="stylesheet" href="style.css" />
-  <script type="module" src="firebase.js" defer></script>
 </head>
 
 <body>
@@ -32,7 +31,7 @@
     <div class="selectBreak center-timer hidden" id="thirdScreen">
       <p class="allText">how many minutes do you want to break?</p>
       <div class="timersBreak">
-        <button id="25_break" class="btn-timer">3</button>
+        <button id="3_break" class="btn-timer">3</button>
         <button id="5_break" class="btn-timer">5</button>
         <button id="10_break" class="btn-timer">10</button>
         <button id="15_break" class="btn-timer">15</button>
@@ -58,27 +57,27 @@
   </div>
 
   <script src="selectTimer.js"></script>
-  <script src="index.js"></script>
-  <script src="progressBar.js"></script>
   <script src="changeColor.js"></script>
+  <script type="module" src="firebase.js"></script>
+  <script src="progressBar.js"></script>
+  <script src="index.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
   <script defer>
 
     let soundBreak = new Howl({
       src: ["../Sounds/pinkTry.mp3"],
       volume: 0.3,
-      loop: false,
+      loop: true,
     });
     let soundPomodoro = new Howl({
       src: ["../Sounds/lofi.mp3"],
       volume: 0.5,
-      loop: false,
+      loop: true,
     });
 
     function playPomodoroSound() {
       soundPomodoro.play();
       soundBreak.stop();
-
     }
 
     function playBreakSound() {

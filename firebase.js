@@ -23,19 +23,21 @@ const db = getFirestore(app);
 const POMODORODATABASE = "pomodorodatabase";
 const idPomodoroDataBase = "vnhBaJjVbUud7B1cUNIt";
 
-async function readDataBase() {
+window.readDataBase = async function (finishP) {
   const database_hourAndMinutes = await getDocs(
     collection(db, POMODORODATABASE)
   );
   database_hourAndMinutes.forEach((doc) => {
-    console.log(doc.data());
+    finishP.textContent = `For now, you did ${doc.data().hours} hours and ${
+      doc.data().minutes
+    } minutes! Congratulations!`;
   });
-}
-
- function attDataBase(minute) {
+};
+// i need to read this peace of function here
+window.attDataBase = function (minute) {
   const databaseInformation = doc(db, POMODORODATABASE, idPomodoroDataBase);
   isHour(databaseInformation, minute);
-}
+};
 async function isHour(databaseInformation, minute) {
   if (minute) {
     if (minute / 60 == 1) {

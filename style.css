@@ -275,7 +275,9 @@ span {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #ffffff;
+  font-size: 24px;
 }
 #reload {
   font-size: 14px;
 }
+

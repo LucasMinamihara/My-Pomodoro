@@ -1,3 +1,5 @@
+
+
 const progressBar = document.querySelector(".progressBar");
 let maximumPomodoro = 0;
 
